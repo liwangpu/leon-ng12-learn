@@ -1,34 +1,23 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "schematics": {
+    "@schematics/angular": {
+      "component": {
+        "changeDetection": "OnPush"
+      }
+    }
+  },
+  "cli": {
+    "analytics": "e064ba83-acdf-40ff-acbf-9dd83fa103ef"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "leon-ng12-learn": {
+    "tutorial": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "inlineTemplate": false,
-          "inlineStyle": false,
-          "style": "scss",
-          "skipTests": true
-        },
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
+          "style": "scss"
         },
         "@schematics/angular:application": {
           "strict": true
@@ -41,7 +30,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/leon-ng12-learn",
+            "outputPath": "dist/tutorial",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -92,14 +81,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "port": 7800
+            "port": 9001
           },
           "configurations": {
             "production": {
-              "browserTarget": "leon-ng12-learn:build:production"
+              "browserTarget": "tutorial:build:production"
             },
             "development": {
-              "browserTarget": "leon-ng12-learn:build:development"
+              "browserTarget": "tutorial:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -107,11 +96,29 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "leon-ng12-learn:build"
+            "browserTarget": "tutorial:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": []
           }
         }
       }
     }
   },
-  "defaultProject": "leon-ng12-learn"
+  "defaultProject": "tutorial"
 }
