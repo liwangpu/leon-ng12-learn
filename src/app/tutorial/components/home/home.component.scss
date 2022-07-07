@@ -1,0 +1,33 @@
+:host {
+    // display: flex;
+    // flex-flow: row wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 52px);
+    grid-column-gap: 64px;
+    grid-row-gap: 16px;
+
+    &>.app {
+        // margin: 0 0 16px;
+
+        &:not(:last-of-type) {
+            // margin-right: 32px;
+        }
+
+        &>.icon {
+            $s: 52px;
+            width: $s;
+            height: $s;
+            border: 1px solid #FCDABB;
+            background-color: #FCEBDC;
+            border-radius: 8px;
+            // margin: 0 32px 0;
+        }
+
+        &>.title {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 20px;
+        }
+    }
+}
