@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-    selector: 'qflow-input',
+    selector: 'qflow-form-control-input',
     templateUrl: './input.component.html',
     styleUrls: ['./input.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush

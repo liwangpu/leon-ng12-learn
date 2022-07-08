@@ -9,7 +9,7 @@
         "noImplicitReturns": true,
         "paths": {
             "dynamic-form": [
-                "projects/dynamic-form/src/public-api.ts",
+                "projects/dynamic-form/src",
             ],
             "dynamic-form/*": [
                 "projects/dynamic-form/*",
