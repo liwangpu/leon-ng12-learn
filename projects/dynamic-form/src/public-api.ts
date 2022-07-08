@@ -1,1 +1,1 @@
-export const t = 1;
+export * from './form.module';
