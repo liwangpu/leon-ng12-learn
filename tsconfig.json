@@ -16,6 +16,10 @@
             ],
             "form-control": [
                 "projects/form-control/src/public-api.ts",
+            ],
+            "form-data-center": [
+              "dist/form-data-center/form-data-center",
+              "dist/form-data-center"
             ]
         },
         "noFallthroughCasesInSwitch": true,

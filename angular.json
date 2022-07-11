@@ -196,6 +196,37 @@
                     }
                 }
             }
+        },
+        "form-data-center": {
+            "projectType": "library",
+            "root": "projects/form-data-center",
+            "sourceRoot": "projects/form-data-center/src",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "project": "projects/form-data-center/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/form-data-center/tsconfig.lib.prod.json"
+                        },
+                        "development": {
+                            "tsConfig": "projects/form-data-center/tsconfig.lib.json"
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/form-data-center/src/test.ts",
+                        "tsConfig": "projects/form-data-center/tsconfig.spec.json",
+                        "karmaConfig": "projects/form-data-center/karma.conf.js"
+                    }
+                }
+            }
         }
     },
     "defaultProject": "tutorial"
