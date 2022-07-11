@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +8,20 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  public constructor() { }
+  public constructor(
+    private el: ElementRef
+  ) { }
 
   public ngOnInit(): void {
+    // console.log('el:', this.el.nativeElement);
+
+    // const obs = new ResizeObserver((e, p) => {
+    //   console.log('e:', e);
+    //   console.log('p:', p);
+    // }).observe(this.el.nativeElement);
+  }
+
+  public startDrag(): void {
 
   }
 
