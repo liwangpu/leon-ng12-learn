@@ -7,7 +7,8 @@
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
-        "test:formDataCenter": "ng test form-data-center"
+        "test:formDataCenter": "ng test form-data-center",
+        "test:dynamicForm": "ng test dynamic-form"
     },
     "private": true,
     "dependencies": {
