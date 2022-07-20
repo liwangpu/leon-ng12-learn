@@ -1,4 +1,7 @@
+import { CdkDragMove } from '@angular/cdk/drag-drop';
 import { Component, OnInit, ChangeDetectionStrategy, ElementRef } from '@angular/core';
+import { Subject } from 'rxjs';
+import {  } from 'subs';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +11,8 @@ import { Component, OnInit, ChangeDetectionStrategy, ElementRef } from '@angular
 })
 export class HomeComponent implements OnInit {
 
+  private draging$ = new Subject<CdkDragMove<any>>();
+  private subs=new SubSink();
   public constructor(
     private el: ElementRef
   ) { }
@@ -23,6 +28,10 @@ export class HomeComponent implements OnInit {
 
   public startDrag(): void {
 
+  }
+
+  public onDraging(item: CdkDragMove<any>): void {
+    console.log('draging:', item);
   }
 
 }

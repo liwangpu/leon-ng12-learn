@@ -1,8 +1,6 @@
-<div class="header">
-    <!-- <button (click)="startDrag()">测试拖拽</button> -->
-    <div class="com"></div>
-    <input type="text">
+<div class="left" cdkDropList>
+    <div class="com" cdkDrag (cdkDragMoved)="onDraging($event)"></div>
 </div>
-<div class="content">
+<div class="right">
     <app-drop-container></app-drop-container>
 </div>

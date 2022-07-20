@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { TutorialRoutingModule } from './tutorial-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { DropContainerComponent } from './components/drop-container/drop-container.component';
@@ -13,7 +13,8 @@ import { DropContainerComponent } from './components/drop-container/drop-contain
   ],
   imports: [
     CommonModule,
-    TutorialRoutingModule
+    TutorialRoutingModule,
+    DragDropModule
   ]
 })
 export class TutorialModule { }
