@@ -34,7 +34,21 @@ export class HomeComponent implements OnInit, OnDestroy {
       // .pipe(debounceTime(80))
       .pipe(distinctUntilChanged((pre, cur) => _.isEqual(pre.event.target, cur.event.target)))
       .subscribe(it => {
-        console.log('item:',it);
+        console.log('item:', it);
+        // const evt: HTMLElement = it.event.target as any;
+        const ps = (it.event as MouseEvent).composedPath();
+        let containerDom: HTMLElement | null = null;
+        for (let i = 0; i < ps.length - 1; i++) {
+          const e: HTMLElement = ps[i] as any;
+          if (typeof e.getAttribute === 'function' && e.getAttribute('drop-container')) {
+            containerDom = e;
+            break;
+          }
+        }
+        // console.log('path:', Array.isArray(ps));
+        console.log('containerDom:', containerDom);
+        // evt.getAttribute('isDropContainer');
+        // it.event.target.p
         // console.log('item:', (it.event.target as any)['isDropContainer']);
         // console.log('item:', (it.event.target as any).getAttribute('drop-container'));
       });
