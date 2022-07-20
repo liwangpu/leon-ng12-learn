@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-drop-container',
@@ -8,6 +8,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class DropContainerComponent implements OnInit {
 
+  @HostBinding('attr.drop-container')
+  public isDropContainer: boolean = true;
   constructor() { }
 
   ngOnInit(): void {
